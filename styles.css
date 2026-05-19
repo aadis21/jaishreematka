@@ -1,0 +1,256 @@
+:root{
+  --bg:#05050a;
+  --nav-bg:rgba(255,255,255,0.03);
+  --card:#0b0c10;
+  --gold:#D4AF37;
+  --red:#E53935;
+  --accent:#0f1724;
+  --glass:rgba(255,255,255,0.04);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;font-family:Poppins,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background:radial-gradient(1200px 600px at 10% 10%, rgba(212,175,55,0.06), transparent),
+            radial-gradient(800px 400px at 90% 80%, rgba(229,57,53,0.04), transparent),
+            var(--bg);
+  color:#e6eef8; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+
+/* Utilities */
+.center{display:flex;align-items:center;justify-content:center}
+.muted{color:rgba(255,255,255,0.65)}
+
+/* NAV */
+.nav-wrap{position:sticky;top:12px;backdrop-filter:blur(8px);z-index:60}
+.nav{display:flex;align-items:center;gap:16px;padding:14px;border-radius:12px;margin:8px 0;background:linear-gradient(180deg,var(--nav-bg),rgba(255,255,255,0.01));box-shadow:0 8px 40px rgba(2,6,23,0.6)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.logo{height:44px;width:auto;border-radius:6px;object-fit:cover}
+.brand-text{font-family:Montserrat;font-weight:800;letter-spacing:0.6px;color:#fff}
+.menu{margin-left:auto;display:flex;gap:18px;align-items:center}
+.menu a{color:rgba(230,238,248,0.9);text-decoration:none;padding:8px 12px;border-radius:8px;transition:all .18s;font-weight:600}
+.menu a:hover{color:var(--gold);transform:translateY(-2px);text-shadow:0 6px 18px rgba(212,175,55,0.08)}
+.nav-actions{display:flex;gap:10px;margin-left:16px}
+.nav-actions .btn{padding:8px 12px;border-radius:8px;font-weight:700}
+.hamburger{display:none;background:transparent;border:0;cursor:pointer;margin-left:auto}
+.hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,0.6);margin:4px 0;border-radius:2px}
+.nav.scrolled{box-shadow:0 12px 40px rgba(2,6,23,0.75)}
+
+/* Logo wrap with subtle glow */
+.logo-wrap{display:inline-flex;align-items:center;justify-content:center;padding:6px;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
+.logo{height:48px;width:auto;display:block;image-rendering:optimizeQuality}
+.brand-text{margin-left:8px}
+
+/* HERO */
+.hero{display:block;padding:40px 20px}
+.hero-inner{display:flex;flex-direction:column;gap:26px;align-items:center}
+.hero-content{text-align:center}
+.hero-content h1{font-family:Montserrat;font-size:28px;margin:0;color:#fff}
+.lead{color:rgba(255,255,255,0.75);margin:10px 0 18px;font-weight:600}
+.primary-ctas{display:flex;gap:12px;flex-direction:column;width:100%;max-width:320px;margin:8px auto}
+.cta{display:inline-block;text-align:center;padding:14px 18px;border-radius:12px;font-weight:800;text-decoration:none}
+.cta-telegram{background:linear-gradient(90deg,var(--gold),#f7e7ab);color:#081018;box-shadow:0 12px 50px rgba(212,175,55,0.12)}
+.cta-download{background:linear-gradient(90deg,var(--red),#ff7b7b);color:#fff;box-shadow:0 12px 50px rgba(229,57,53,0.08)}
+.cta:hover{transform:translateY(-6px);transition:all .22s}
+
+/* Telegram branded button */
+.telegram-btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;font-weight:800;color:#fff;text-decoration:none;background:linear-gradient(135deg,#37aee2,#2aa0e8);box-shadow:0 8px 30px rgba(56,178,244,0.12);border:1px solid rgba(255,255,255,0.03);transition:all .18s}
+.telegram-btn svg{filter:drop-shadow(0 6px 18px rgba(56,178,244,0.14));}
+.telegram-btn:hover{transform:translateY(-4px);box-shadow:0 18px 60px rgba(56,178,244,0.16);}
+.telegram-btn.large{padding:14px 18px;border-radius:14px;font-size:16px}
+
+/* Equal-sized CTAs */
+.primary-ctas{display:flex;gap:12px;justify-content:center;align-items:center}
+.cta.large,.telegram-btn.large{min-width:180px;display:inline-flex;align-items:center;justify-content:center;gap:10px}
+
+/* Make nav download CTA consistent */
+.nav-download{background:linear-gradient(90deg,var(--gold),#f0d089);color:#081018}
+
+
+.hero-mockup{width:240px}
+.phone{position:relative}
+.screen{width:240px;height:460px;border-radius:30px;background:linear-gradient(180deg,#071018,#071226);padding:14px;color:#fff;box-shadow:0 24px 80px rgba(2,6,23,0.6)}
+.screen .top{height:42px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:700}
+.ticker{margin-top:12px;display:flex;flex-direction:column;gap:10px}
+.ticker .row{display:flex;justify-content:space-between;padding:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px}
+.ticker .t{opacity:0.85;font-weight:700}
+.ticker .n{font-weight:800}
+.phone-glow{position:absolute;left:-40px;top:160px;width:320px;height:200px;background:radial-gradient(closest-side,rgba(212,175,55,0.12),transparent);filter:blur(26px);pointer-events:none}
+
+/* FEATURES */
+.features{margin-top:36px;padding-bottom:8px}
+.features h2{margin:0 0 12px}
+.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.feature{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);text-align:center;font-weight:700}
+
+/* LIVE RESULTS */
+.live{margin-top:34px}
+.live-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
+.live-card{background:linear-gradient(90deg,rgba(0,0,0,0.35),rgba(255,255,255,0.02));padding:18px;border-radius:12px;border:1px solid rgba(212,175,55,0.07);display:flex;flex-direction:column;gap:10px;align-items:center;justify-content:center;text-align:center;box-shadow:0 8px 40px rgba(10,8,6,0.45)}
+.live-card .title{font-weight:800;color:var(--gold);margin-bottom:10px;letter-spacing:0.6px}
+.live-card .nums{display:flex;gap:10px}
+.live-card .nums span{background:linear-gradient(90deg,#081018,#0f1724);padding:12px 16px;border-radius:12px;font-weight:900;color:var(--gold);box-shadow:0 12px 40px rgba(212,175,55,0.12);border:1px solid rgba(212,175,55,0.12)}
+
+/* Gold glowing border effect */
+.live-card::before{content:'';position:absolute;inset:auto;pointer-events:none}
+
+
+/* ABOUT and FOOTER */
+.about{margin:36px 0;padding-bottom:30px}
+.site-footer{padding:18px 20px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.15));border-top:1px solid rgba(255,255,255,0.02)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.footer-left{display:flex;align-items:center;gap:10px}
+.footer-logo{height:42px}
+.footer-actions{display:flex;gap:8px}
+.copyright{opacity:0.6;margin-top:12px;text-align:center;font-size:13px}
+
+/* Responsive */
+
+@media(min-width:900px){
+  .hero-inner{flex-direction:row;justify-content:space-between;align-items:center}
+  .hero-content{text-align:left;max-width:560px}
+  .primary-ctas{flex-direction:row}
+  .feature-grid{grid-template-columns:repeat(4,1fr)}
+  .live-grid{grid-template-columns:repeat(4,1fr)}
+  .hamburger{display:none}
+  .nav-actions{display:flex}
+}
+
+@media(max-width:899px){
+  .menu{display:none}
+  .hamburger{display:block}
+  .nav-actions{display:none}
+  .logo-wrap{padding:4px}
+  .brand-text{display:none}
+  .live-card .nums span{padding:10px 12px}
+  .cta.large,.telegram-btn.large{min-width:140px}
+}
+
+/* Small touches */
+.small{padding:8px 10px}
+.install{background:linear-gradient(90deg,var(--gold),#ffd88a);color:#061017}
+
+/* Final polish overrides (loaded last to ensure precedence) */
+:root{
+  --tg-start:#37AEE2;
+  --tg-end:#2AA0E8;
+  --download-start:#00C853;
+  --download-end:#00E676;
+}
+
+/* Logo */
+.logo-wrap{padding:6px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);box-shadow:0 10px 40px rgba(0,0,0,0.6);}
+.logo{height:52px;width:auto;display:block;image-rendering:optimizeQuality}
+
+/* Hero polish */
+.hero-content{max-width:620px}
+.hero-content .hero-logo{display:block;margin:0 auto 14px;width:84px;height:auto;border-radius:10px;box-shadow:0 18px 60px rgba(212,175,55,0.06)}
+h1{font-family:Montserrat,system-ui;font-size:30px;font-weight:800;color:#fff;margin:0}
+@media(min-width:900px){h1{font-size:44px}}
+.lead{color:rgba(255,255,255,0.9);font-weight:600;margin-bottom:18px}
+
+/* CTAs: download and telegram parity */
+.cta-download.large.download-btn{background:linear-gradient(135deg,var(--download-start),var(--download-end));color:#051014;box-shadow:0 22px 70px rgba(0,200,83,0.12);border:1px solid rgba(255,255,255,0.02)}
+.nav-download{background:linear-gradient(135deg,var(--download-start),var(--download-end));color:#051014}
+.telegram-btn{background:linear-gradient(135deg,var(--tg-start),var(--tg-end));}
+.telegram-btn span, .download-btn span{font-weight:800}
+
+/* Ensure equal sizing */
+.cta.large, .telegram-btn.large, .download-btn{min-width:180px;padding:12px 18px}
+
+/* Telegram glow */
+.telegram-btn.tg-glow, .telegram-btn:hover{box-shadow:0 30px 100px rgba(56,178,244,0.2);transform:translateY(-4px)}
+
+/* Live cards - improved spacing, gold glow */
+.live-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.live-card{border-radius:14px;padding:18px;background:linear-gradient(180deg,rgba(6,8,10,0.6),rgba(12,14,18,0.45));border:1px solid rgba(212,175,55,0.12);box-shadow:0 20px 60px rgba(0,0,0,0.6);position:relative;overflow:visible}
+.live-card .title{font-size:16px;color:var(--gold);font-weight:800;margin-bottom:10px}
+.live-card .nums{display:flex;gap:10px;justify-content:center}
+.live-card .nums span{padding:12px 16px;border-radius:12px;background:linear-gradient(90deg,#071018,#0f1724);color:var(--gold);font-weight:900;box-shadow:0 18px 50px rgba(212,175,55,0.12);border:1px solid rgba(212,175,55,0.14)}
+.live-card::after{content:'';position:absolute;inset:-6px;z-index:-1;border-radius:18px;background:radial-gradient(closest-side,rgba(212,175,55,0.06),transparent);filter:blur(18px);opacity:0.95}
+
+/* responsive tweaks */
+@media(max-width:499px){
+  .cta.large, .telegram-btn.large, .download-btn{min-width:140px;padding:10px 14px;font-size:14px}
+  .logo{height:44px}
+}
+
+
+/* NAV */
+.nav-wrap{position:sticky;top:0;backdrop-filter:blur(8px);z-index:60}
+.nav{display:flex;align-items:center;gap:16px;padding:12px 18px;border-radius:8px;margin:8px 0;background:linear-gradient(180deg,var(--nav-bg),transparent);box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.brand-text{font-family:Montserrat;font-weight:700}
+.menu{margin-left:auto;display:flex;gap:18px}
+.menu a{color:rgba(230,238,248,0.88);text-decoration:none;padding:8px 10px;border-radius:6px;transition:all .18s}
+.menu a:hover{color:var(--gold);transform:translateY(-2px);text-shadow:0 6px 18px rgba(212,175,55,0.12)}
+.btn-ghost{display:none}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;padding:48px 20px 60px}
+.hero-left h1{font-family:Montserrat;font-size:28px;margin:0 0 8px;color:#fff;letter-spacing:0.6px}
+.lead{color:rgba(255,255,255,0.68);margin:0 0 18px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:10px;font-weight:700;text-decoration:none}
+.btn-telegram{background:linear-gradient(90deg,var(--gold),#f6e0a3);color:#09101a;box-shadow:0 6px 40px rgba(212,175,55,0.18);transform:translateZ(0);border:none}
+.btn-telegram:hover{filter:brightness(1.03);box-shadow:0 10px 60px rgba(212,175,55,0.22)}
+.btn-download{background:linear-gradient(90deg,#ffffff07,#ffffff02);border:1px solid rgba(255,255,255,0.06);color:#fff}
+.badges{display:flex;gap:10px;margin-top:18px;padding:0;list-style:none}
+.badges li{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:6px 10px;border-radius:999px;font-weight:600;color:rgba(255,255,255,0.8)}
+
+.hero-right{display:flex;justify-content:center}
+.phone-mockup{width:220px;position:relative}
+.phone-mockup .screen{background:linear-gradient(180deg,#07101a,#0b131a);border-radius:28px;padding:14px;height:420px;box-shadow:0 18px 60px rgba(3,8,20,0.7), inset 0 1px 0 rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);overflow:hidden}
+.topbar{height:30px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--gold);letter-spacing:0.6px}
+.results{padding:12px;display:flex;flex-direction:column;gap:8px}
+.result{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:8px;border-radius:10px;display:flex;justify-content:space-between;align-items:center}
+.num{font-weight:800;color:#fff}
+.glow{position:absolute;inset:auto  -30px -20px -30px;background:radial-gradient(closest-side,rgba(212,175,55,0.12),transparent);height:170px;border-radius:50%;filter:blur(22px);pointer-events:none}
+
+/* DOWNLOAD */
+.download{margin-top:30px}
+.download-card{display:flex;gap:14px;align-items:center;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.apk-icon{background:linear-gradient(90deg,var(--gold),#f2d99b);padding:8px 12px;border-radius:8px;font-weight:700;color:#081018}
+.btn-install{background:linear-gradient(90deg,var(--red),#ff6b6b);padding:10px 14px;border-radius:9px;color:#fff;box-shadow:0 10px 40px rgba(229,57,53,0.12)}
+
+/* FEATURES */
+.features{margin-top:34px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 60px rgba(10,10,12,0.6)}
+.card .icon{font-size:20px;color:var(--gold);margin-bottom:8px}
+
+/* LIVE RESULTS */
+.live{margin-top:34px}
+.live-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
+.live-card{background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column;gap:8px}
+.live-card .numbers{display:flex;gap:8px}
+.live-card .numbers span{background:linear-gradient(90deg,#0f1724,#09121a);padding:8px 12px;border-radius:8px;font-weight:800;color:var(--gold);box-shadow:0 8px 28px rgba(212,175,55,0.06)}
+
+/* ABOUT and FOOTER */
+.about{margin:36px 0;padding-bottom:30px}
+.site-footer{padding:26px 20px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.2));border-top:1px solid rgba(255,255,255,0.02)}
+.footer-grid{display:flex;gap:18px;align-items:center;justify-content:space-between}
+.socials a{color:rgba(255,255,255,0.6);margin-right:8px;text-decoration:none}
+.copyright{opacity:0.6;margin-top:12px;text-align:center}
+
+/* Responsive */
+@media(min-width:800px){
+  .hero{grid-template-columns:1fr 420px}
+  .hero-left h1{font-size:40px}
+  .cards{grid-template-columns:repeat(4,1fr)}
+  .live-grid{grid-template-columns:repeat(3,1fr)}
+  .btn-ghost{display:none}
+}
+
+@media(max-width:799px){
+  .menu{display:none}
+  .btn-ghost{display:inline-block;background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px 10px;border-radius:8px;color:#fff}
+  .nav{padding:10px}
+}
+
+/* Small touches */
+.small{padding:8px 10px}
+.install{background:linear-gradient(90deg,var(--gold),#ffd88a);color:#061017}
