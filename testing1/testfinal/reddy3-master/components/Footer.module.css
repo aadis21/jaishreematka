@@ -1,0 +1,113 @@
+.footer {
+  background-color: var(--secondary);
+  border-top: 1px solid var(--border);
+  padding-top: 4rem;
+}
+
+.footerTop {
+  padding-bottom: 3rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 3rem;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+}
+
+.logoReddy {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: 1px;
+}
+
+.logoAnna {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  color: #fff;
+  margin-top: 2px;
+}
+
+.desc {
+  color: #aaa;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.colTitle {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.colTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+.linksList {
+  list-style: none;
+  padding: 0;
+}
+
+.linksList li {
+  margin-bottom: 0.8rem;
+}
+
+.linksList a {
+  color: #aaa;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.linksList a:hover {
+  color: var(--primary);
+  padding-left: 5px;
+}
+
+.footerBottom {
+  background-color: #0a0a0c;
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.footerBottom p {
+  color: #888;
+  font-size: 0.85rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
