@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Exo+2:wght@400;500;600&family=Poppins:wght@400;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #f4f6f9;
+  --foreground: #1a1a2e;
+  
+  --ra-crimson: #c40000;
+  --ra-crimson-dark: #6b1201;
+  --ra-gold: #ffcc00;
+  --ra-gold-dark: #ffaa00;
+  --ra-dark: #0f1923;
+  --ra-dark-card: #191919;
+  
+  --ra-back-blue: #72bbef;
+  --ra-back-blue-hover: #5aaade;
+  --ra-lay-pink: #faa9ba;
+  --ra-lay-pink-hover: #f891a6;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ra-crimson: var(--ra-crimson);
+  --color-ra-crimson-dark: var(--ra-crimson-dark);
+  --color-ra-gold: var(--ra-gold);
+  --color-ra-gold-dark: var(--ra-gold-dark);
+  --color-ra-dark: var(--ra-dark);
+  --color-ra-dark-card: var(--ra-dark-card);
+  --color-ra-back-blue: var(--ra-back-blue);
+  --color-ra-lay-pink: var(--ra-lay-pink);
+  
+  --font-sans: 'Exo 2', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-rajdhani: 'Rajdhani', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+/* Base resets & custom smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f4f6f9;
+  color: #1a1a2e;
+}
+
+/* Custom micro-animations for odds drift and flashing */
+@keyframes flash-up {
+  0% { background-color: #ffe08a; }
+  100% { background-color: inherit; }
+}
+
+@keyframes flash-down {
+  0% { background-color: #ffb3b3; }
+  100% { background-color: inherit; }
+}
+
+.flash-up-active {
+  animation: flash-up 0.6s ease-out;
+}
+
+.flash-down-active {
+  animation: flash-down 0.6s ease-out;
+}
+
+/* Floating WhatsApp Custom Animations */
+@keyframes wa-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+  70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+@keyframes wa-bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-12px); }
+  60% { transform: translateX(-50%) translateY(-6px); }
+}
+
+.animate-wa-float {
+  animation: wa-bounce 2s infinite, wa-pulse 3s infinite;
+}
+
+/* Shiny effect on hover for guidelines cards */
+@keyframes card-shine {
+  100% { left: 125%; }
+}
+
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.1), rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+  transform: skewX(-25deg);
+  pointer-events: none;
+}
+
+.shine-effect:hover::before {
+  animation: card-shine 0.8s ease;
+}
+
+/* Emoji style fixes */
+.emoji {
+  display: inline-block;
+  height: 1.2em;
+  width: 1.2em;
+  margin: 0 0.05em 0 0.1em;
+  vertical-align: -0.1em;
+}
+
+/* Swiper custom styles override */
+.swiper-button-next, .swiper-button-prev {
+  color: #ffcc00 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ffcc00 !important;
+}
