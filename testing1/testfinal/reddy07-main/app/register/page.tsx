@@ -1,0 +1,44 @@
+import React from "react";
+import type { Metadata } from "next";
+import { Sidebar } from "@/components/Sidebar";
+import { ConicButton } from "@/components/ConicButton";
+
+export const metadata: Metadata = {
+  title: "Register | Reddy Anna Book",
+  robots: { index: false, follow: false },
+};
+
+export default function RegisterPage() {
+  return (
+    <div className="w-full max-w-7xl mx-auto px-4 md:px-6 py-8 select-none">
+      <div className="w-full flex flex-col lg:flex-row gap-8">
+        
+        {/* Left Sidebar */}
+        <div className="hidden lg:block lg:w-1/4">
+          <Sidebar />
+        </div>
+
+        {/* Main Content */}
+        <div className="w-full lg:w-3/4 flex flex-col gap-8 text-left">
+          
+          {/* Main Title Banner */}
+          <section className="w-full bg-[#0c1322] border border-[#9C27B0]/10 rounded-md p-6 md:p-8 flex flex-col gap-6 shadow-lg shadow-black items-center text-center max-w-md mx-auto">
+            <h1 className="text-[#FF4081] font-black text-2xl tracking-wide">
+              Create Reddy Anna ID Instantly
+            </h1>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Skip lengthy registration forms, KYC validations, and sign-up waitlists. Receive your verified betting ID on WhatsApp in under 60 seconds.
+            </p>
+            <div className="bg-[#05080f] p-4 rounded-xl border border-[#9C27B0]/5 text-xs text-gray-400 font-semibold leading-relaxed w-full">
+              Provide our 24/7 active WhatsApp agent with your preferred username and secure password, and your account will be instantly created!
+            </div>
+            <div className="pt-2 w-full">
+              <ConicButton text="Register via WhatsApp Agent" />
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  );
+}
